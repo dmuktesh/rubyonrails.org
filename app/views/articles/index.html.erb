@@ -1,4 +1,7 @@
 <h1>Listing All the article</h1>
+<%= form_for :article, url: articles_path do |f| %>
+<% end %>
+<%= link_to 'New article', new_article_path %>
 <table>
 	<tr>
 		<th>Title</th>
