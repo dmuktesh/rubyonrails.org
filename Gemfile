@@ -48,3 +48,6 @@ group :production do
 	gem 'pg','0.12.2'
 end
 gem 'devise', '~> 4.2'
+
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'

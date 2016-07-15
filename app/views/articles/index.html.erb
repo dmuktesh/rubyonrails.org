@@ -1,24 +1,32 @@
 <h1>Listing All the article</h1>
 <%= form_for :article, url: articles_path do |f| %>
 <% end %>
-<%= link_to 'New article', new_article_path %>
-<table>
-	<tr>
-		<th>Title</th>
-		<th>Text</th>
-		<th>User</th>
-	</tr>
 
-	<% @articles.each do |article| %>
-		<tr>
-			<td><%= article.title %></td>
-			<td><%= article.text %></td>
-			<td><%= article.user.email %></td>
-			<td><%= link_to 'show', article_path(article) %></td>
-			<% if article.user==current_user %>
+		 
+<table class = "table table-striped">
+    <col width="2000">
+  <col width="40">
+  <col width="20">
+  <col width="20">
+  <col width="20">
+   <thead>
+      <tr>
+         <th>Article</th>
+         <th>Created By</th>
+         <th>Show</th>
+      </tr>
+   </thead>
+   	<% @articles.each do |article| %>
+   <tbody>
+      <tr>
+         <td><%= article.title %></td>
+         <td><%= article.user.email %></td>
+         <td><%= link_to 'show', article_path(article) %></td>
+         <% if article.user==current_user %>
 			<td><%= link_to 'Edit',edit_article_path(article)%></td>
 			<td><%= link_to 'Destroy',article_path(article),method: :delete, data: { confirm: 'Are you sure?'}%></td>
-			<% end %>
-		</tr>
+		<% end %>
+      </tr>
+   </tbody>
 	<% end %>
 </table>
