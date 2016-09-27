@@ -6,7 +6,7 @@ default: &default
   host: localhost
   port: 5432
 
-development:
+production:
   <<: *default
   database: rubyblog
   #database: gmr_staging1 
